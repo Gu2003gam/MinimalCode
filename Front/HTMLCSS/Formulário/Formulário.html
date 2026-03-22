@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="Formulário.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Formulário</h1>
+        <form action="enviar" method="post">
+            <div class="input-group">
+                <label for="username">Nome de Usuário:</label>
+                <input type="text" id="username" name="username" placeholder="Insira o nome do usuário..." required>
+            </div>
+            <div class="input-group">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" placeholder="Insira a senha do usuário..." required>
+            </div>
+            <div class="button-group">
+                <button type="submit">Enviar</button>
+                <button type="reset">Limpar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

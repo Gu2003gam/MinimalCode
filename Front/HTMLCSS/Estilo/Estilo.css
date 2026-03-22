@@ -1,0 +1,35 @@
+img {
+    width: 200px;
+    border-radius: 100px;
+    border: 2px solid #33373B;
+}
+
+body {
+    background: linear-gradient(135deg, #EED4BE 20%, #C4A97F 40%, #CC8672 60%);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: #33373B;
+}
+
+h2{
+    color: #33373B;
+}
+
+button {
+    color: #6FA9E3;
+    background-color: #2A4D9B;
+}
+
+p {
+    color: #33373B;
+}
+
+footer {
+    color: #33373B;
+}
+
+label {
+    color: #33373B;
+}

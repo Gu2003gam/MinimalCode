@@ -1,0 +1,25 @@
+:root {
+    --Tamanho-Fonte: 50px;
+    --Espaçamento: 50px;
+    --Tamanho-Fonte2: 70px;
+    --Espaçamento2: 70px
+}
+
+.variable {
+    font-size: 20px;
+    padding: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .variable {
+        font-size: var(--Espaçamento);
+        padding: var(--Espaçamento);
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .variable {
+        font-size: var(--Tamanho-Fonte2);
+        padding: var(--Espaçamento2);
+    }
+}
