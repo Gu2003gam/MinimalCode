@@ -11,9 +11,13 @@
     "devStart": "nodemon server.js"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.3.1",
+    "@fortawesome/free-solid-svg-icons": "^7.3.1",
+    "@fortawesome/react-fontawesome": "^3.5.0",
     "bcrypt": "^6.0.0",
     "cors": "^2.8.6",
     "express": "^5.2.1",
+    "mongoose": "^9.9.1",
     "nodemon": "^3.1.14",
     "react": "^19.2.7",
     "react-dom": "^19.2.7"

@@ -49,3 +49,22 @@ body {
 .botaoAcessar:hover, .botaoCadastrar:hover {
     box-shadow: 0px 5px 10px white;
 }
+.painel {
+    visibility: hidden;
+}
+.painelSucesso {
+    background-color: green;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    border-radius: 10px;
+    visibility: visible;
+}
+.painelErro {
+    background-color: red;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    border-radius: 10px;
+    visibility: visible;
+}
