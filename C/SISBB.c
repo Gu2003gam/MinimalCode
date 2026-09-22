@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #define MAX_LIVROS 100
 typedef struct {
+    int id;
     char titulo[100];
     char autor[100];
     char editora[100];
@@ -85,6 +86,7 @@ int main() {
                         );
                     }
                     break;
+                    case 3 :
                 }
             }
             break;
