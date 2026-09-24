@@ -5,6 +5,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <math.h>
+#include <time.h>
 
 int desafio1() {
     //área retângulo
@@ -272,8 +274,8 @@ int desafio15() {
 int desafio16() {
     //análise de 10 valores inteiros
     int numeros[10];
-    int maior = 0;
-    int menor = 0;
+    int maior;
+    int menor;
     int soma = 0;
     for(int i = 1; i <=10; i++) {
         printf("\nDigite o %d° número:\n", i);
@@ -296,10 +298,132 @@ int desafio16() {
         "\nA média aritmética dos 10 valores foi '%d'\n",
         maior, menor, soma/10
     );
+    return 0;
 }
 
+int desafio17() {
+    //soma de ímpares em um intervalo
+    int valor1 = 2, valor2 = 1, soma = 0;
+    while(valor2 < valor1) {
+        for(int i = 1; i < 3; i++) {
+        printf("\nDigite o %d° valor:\n", i);
+        if(i == 1) {
+            scanf("%d", &valor1);
+        } else {
+            scanf("%d", &valor2);
+        }
+    }
+    if(valor2 < valor1) {
+        printf("\nIntervalo de valores inválido!\n");
+    }
+}
+for(int i = valor1; i <= valor2; i++) {
+    printf("%d, ", i);
+    if(i % 2 != 0) {
+        soma = soma + i;
+    }
+}
+printf("\nA soma dos números ímpares do intervalo é: %d\n", soma);
+    return 0;
+}
+
+int desafio18() {
+    //sequência de Fibonacci iterativa
+    int numero, t1 = 0, t2 = 1, proximoTermo;
+    printf("\nDigite o número de elementos da sequência de Fibonacci:\n");
+    scanf("%d", &numero);
+    for(int i = 1; i <= numero; i++) {
+        printf("%d, ", t1);
+        proximoTermo = t1 + t2;
+        t1 = t2;
+        t2 = proximoTermo;
+    }
+    return 0;
+}
+
+int desafio19() {
+    //cálculo de logaritmo com validação
+    int numero = -1;
+    while(numero < 0 || numero == 0) {
+        printf("\nDigite um número positivo:\n");
+        scanf("%d", &numero);
+
+        if(numero < 0 || numero == 0) {
+            printf("\nNúmero inválido!\n");
+        }
+    }
+    printf("\nO logaritmo decimal de '%d' é igual a %.2f.\n", numero, log10(numero));
+    return 0;
+}
+
+int desafio20() {
+    //algoritmo de truncamento de notas
+    float nota;
+    printf("\nDigite uma nota fracionária:\n");
+    scanf("%f", &nota);
+    printf("\n%f é a nota original.\n", nota);
+    int inteira = (int)nota;
+    printf("\n%d é a nota truncada.\n", inteira);
+    return 0;
+}
+
+int desafio21() {
+    srand(time(NULL));
+    int numero = rand() % 101;
+    int valor = -1;
+    int tentativas = 7;
+    while(numero != valor) {
+        printf(
+            "\nAdivinhe um número entre '0' e '100:'\n"
+            "\nVocê ainda tem %d tentativas.\n", tentativas
+        );
+        scanf("%d", &valor);
+        if(valor == numero) {
+            printf("\nMeus parabéns!, a resposta era '%d'.\n", numero);
+        } else {
+            char *qual = (valor > numero) ? "O número é menor do que" : "O número é maior do que";
+            printf("\n%s %d\n", qual, valor);
+        }
+        tentativas--;
+        if(tentativas < 1) {
+            printf(
+                "\nSuas chances acabaram!\n"
+                "\nA resposta era '%d'.\n",
+                numero
+            );
+            break;
+        }
+    }
+    return 0;
+}
+
+int desafio22() {
+    //distribuidor de cédulas automático
+    int cem, cinquenta, vinte, dez, cinco, dois, um, saque;
+    printf("\nDigite um valor em reais:\n");
+    scanf("%d", &saque);
+    cem = saque % 1000;
+    cinquenta = cem % 100;
+    vinte = cinquenta % 50;
+    dez = vinte % 20;
+    cinco = dez % 10;
+    dois = cinco % 5;
+    um = dois % 2;
+    printf("\nTotal:\n"
+        "%d cédulas de R$100,\n"
+        "%d cédulas de R$50,\n"
+        "%d cédulas de R$20,\n"
+        "%d cédulas de R$10,\n"
+        "%d cédulas de R$5,\n"
+        "%d cédulas de R$2,\n"
+        "%d cédulas de R$1.\n",
+        cem / 100, cinquenta / 50, vinte / 20, dez / 10, cinco / 5, dois / 2, um / 1
+    );
+    return 0;
+}
 
 int main() {
-    desafio16();
+    desafio22();
+
     return 0;
 }
