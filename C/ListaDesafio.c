@@ -7,6 +7,8 @@
 #include <unistd.h>
 #include <math.h>
 #include <time.h>
+#include <ctype.h>
+
 
 int desafio1() {
     //área retângulo
@@ -20,6 +22,7 @@ int desafio1() {
     return 0;
 }
 
+
 int desafio2() {
     //conversor de temperatura
     float celsius;
@@ -28,6 +31,7 @@ int desafio2() {
     printf("\n%.1f graus celsius equivale a %.1f graus fahrenheit.\n", celsius, celsius * 1.8 + 32);
     return 0;
 }
+
 
 int desafio3() {
     //média ponderada de provas
@@ -45,9 +49,10 @@ int desafio3() {
         soma = soma + nota[i];
     }
     printf("\nA média ponderada do aluno é: %1.f\n", (float)soma / 3);
-    
+   
     return 0;
 }
+
 
 int desafio4() {
     //calculadora de desconto
@@ -58,6 +63,7 @@ int desafio4() {
     return 0;
 }
 
+
 int desafio5() {
     //conversor de moedas
     float reais;
@@ -66,6 +72,7 @@ int desafio5() {
     printf("\nCom base na atual cotação do dólar(1 USD = BRL 5,12), o valor de R$%1.f equivale a U$$%1.f\n", reais, reais / 5.12);
     return 0;
 }
+
 
 int desafio6() {
     //verificação de paridade
@@ -76,6 +83,7 @@ int desafio6() {
     printf("\n%d %s\n", numero, status);
     return 0;
 }
+
 
 int desafio7() {
     //maior de dois números
@@ -94,6 +102,7 @@ int desafio7() {
     return 0;
 }
 
+
 int desafio8() {
     //reajuste salarial baseado em faixa
     float salario;
@@ -103,6 +112,7 @@ int desafio8() {
     printf("\nO salário de R$%1.f foi reajustado para R$%1.f.\n", salario, reajuste);
     return 0;
 }
+
 
 int desafio9() {
     //cálculo de consumo de combustível
@@ -115,6 +125,7 @@ int desafio9() {
     printf("\nO seu veículo consome em média um litro a cada %1.fkm.\n", distancia / litros);
     return 0;
 }
+
 
 int desafio10() {
     //classificação de nadadores por idade
@@ -145,6 +156,7 @@ int desafio10() {
     return 0;
 }
 
+
 int desafio11() {
     //classificador completo de triângulos
     int valor[3];
@@ -173,6 +185,7 @@ int desafio11() {
     }
     return 0;
 }
+
 
 int desafio12() {
     //calculadora multifuncional com menu
@@ -223,6 +236,7 @@ int desafio12() {
     return 0;
 }
 
+
 int desafio13() {
     //tabuada personalizada com laço
     int numero;
@@ -232,8 +246,10 @@ int desafio13() {
         printf("\n%d X %d = %d\n", numero, i, numero * i);
     }
 
+
     return 0;
 }
+
 
 int desafio14() {
     //contagem regressiva e detecção de múltiplos
@@ -247,8 +263,10 @@ int desafio14() {
     }
     printf("\nFIM!\n");
 
+
     return 0;
 }
+
 
 int desafio15() {
     //validador e média de notas
@@ -263,13 +281,15 @@ int desafio15() {
             }
         }
         if((nota1 > 10.0 || nota1 < 0.0) && (nota2 > 10.0 || nota2 < 0.0)) {
-            printf("\nNota inválida!, o valor de cada nota precisa estar entre '0.0' e '10.0'\n"); 
+            printf("\nNota inválida!, o valor de cada nota precisa estar entre '0.0' e '10.0'\n");
         }
     }
     printf("\nA média aritmética das notas '%1.f' e '%1.f' é '%1.f'.\n", nota1, nota2, (nota1 + nota2) / 2);
 
+
     return 0;
 }
+
 
 int desafio16() {
     //análise de 10 valores inteiros
@@ -301,6 +321,7 @@ int desafio16() {
     return 0;
 }
 
+
 int desafio17() {
     //soma de ímpares em um intervalo
     int valor1 = 2, valor2 = 1, soma = 0;
@@ -327,6 +348,7 @@ printf("\nA soma dos números ímpares do intervalo é: %d\n", soma);
     return 0;
 }
 
+
 int desafio18() {
     //sequência de Fibonacci iterativa
     int numero, t1 = 0, t2 = 1, proximoTermo;
@@ -341,12 +363,14 @@ int desafio18() {
     return 0;
 }
 
+
 int desafio19() {
     //cálculo de logaritmo com validação
     int numero = -1;
     while(numero < 0 || numero == 0) {
         printf("\nDigite um número positivo:\n");
         scanf("%d", &numero);
+
 
         if(numero < 0 || numero == 0) {
             printf("\nNúmero inválido!\n");
@@ -355,6 +379,7 @@ int desafio19() {
     printf("\nO logaritmo decimal de '%d' é igual a %.2f.\n", numero, log10(numero));
     return 0;
 }
+
 
 int desafio20() {
     //algoritmo de truncamento de notas
@@ -366,6 +391,7 @@ int desafio20() {
     printf("\n%d é a nota truncada.\n", inteira);
     return 0;
 }
+
 
 int desafio21() {
     srand(time(NULL));
@@ -397,6 +423,7 @@ int desafio21() {
     return 0;
 }
 
+
 int desafio22() {
     //distribuidor de cédulas automático
     int cem, cinquenta, vinte, dez, cinco, dois, um, saque;
@@ -422,8 +449,171 @@ int desafio22() {
     return 0;
 }
 
+
+int desafio23() {
+    //conversor de base decimal para binário
+    int valor;
+    int binario[8];
+    int soma = 0;
+    printf("\nDigite um número:\n");
+    scanf("%d", &valor);
+    int octeto[8] = {128, 64, 32, 16, 8, 4, 2, 1};
+    for(int i = 0; i < 8; i ++) {
+        if(soma += octeto[i] <= valor) {
+            soma += octeto[i];
+            binario[i] = 1;
+        } else {
+            binario[i] = 0;
+        }
+    }
+    for(int i = 0; i < 8; i++) {
+        printf("%d", binario[i]);
+    }
+    return 0;
+}
+
+
+int desafio24() {
+    //verificador de números primos
+    int numero, eh_primo = 1;
+    printf("\nDigite um número:\n");
+    scanf("%d", &numero);
+
+    if(numero <= 1) {
+        eh_primo = 0;
+    } else {
+        for(int i = 2; i * i <= numero; i++) {
+            if(numero % i == 0) {
+                eh_primo = 0;
+                break;
+            }
+        }
+    }
+
+    char *status = (eh_primo == 1) ? "é primo!" : "não é primo";
+    printf("\n%d %s\n", numero, status);
+    return 0;
+}
+
+int desafio25() {
+    //estatística e desvio padrão populacional
+    int valores[10];
+    float soma = 0, soma_desvios = 0;
+    float media, variancia, desvio_padrao;
+
+    for(int i = 0; i < 10; i++){
+        printf("\nDigite o %d valor:\n", i + 1);
+        scanf("%d", &valores[i]);
+        soma = soma + valores[i];
+    }
+    printf("\nOs valores digitados foram:\n");
+    for(int i = 0; i < 10; i++) {
+        printf("%d, ", valores[i]);
+    }
+    media = soma / 10;
+    printf("\nA média dos 10 valores é igual a: %.1f\n", media);
+    for(int i = 0; i < 10; i++) {
+        float desvio = valores[i] - media;
+        soma_desvios = soma_desvios + pow(desvio, 2);
+    }
+    variancia = soma_desvios / 10;
+    desvio_padrao = sqrt(variancia);
+    printf(
+        "\nA variância equivale a: %.1f\n"
+        "\nO desvio padrão equivale a: %.1f\n",
+        variancia, desvio_padrao
+    );
+
+    return 0;
+}
+
+int desafio26() {
+    char texto[100];
+    int chave, acao;
+    printf("\nDigite a frase:\n");
+    getchar();
+    fgets(texto, sizeof(texto), stdin);
+    printf(
+        "\nDigite a ação:\n"
+        "\n1.Digite '1' para criptografar.\n"
+        "\n2.Digite '2' para descriptografar.\n"
+    );
+    scanf("%d", &acao);
+    printf("\nDigite o valor da chave:\n");
+    scanf("%d", &chave);
+    if (acao == 2) {
+        chave = 26 - (chave % 26);
+    }
+    for(int i = 0; texto[i] != '\0'; i++) {
+        char c = texto[i];
+
+        if(isalpha(c)) {
+            char base = isupper(c) ? 'A' : 'a';
+            texto[i] = (c - base + chave) % 26 + base;
+        }
+    }
+    printf("\nTexto criptografado: %s\n", texto);
+    return 0;
+}
+
+int desafio27() {
+    //cálculo de equações do segundo grau
+    int a, b, c;
+    float delta, raiz1, raiz2;
+    for(int i = 0; i < 3; i ++) {
+        printf("\nDigite o %d° valor:\n", i + 1);
+        if(i == 0) {
+            scanf("%d", &a);
+        } else if(i == 1) {
+            scanf("%d", &b);
+        } else {
+            scanf("%d", &c);
+        }
+    }
+    if(a != 0) {
+        delta = pow(b, 2) -4*(a*c);
+        printf("\nO valor de delta é: %1.f\n", delta);
+    } else {
+        printf("\nO valor de 'a' precisa ser diferente de zero!.\n");
+    }
+    if(delta < 0) {
+        printf("\nNão existem raízes reais.\n");
+    } else if(delta == 0) {
+        raiz1 = (-(b)) / (2*a);
+        printf("\nA raíz real é: %1.f\n", raiz1);
+    } else if(delta > 0) {
+        raiz1 = ((-(b)) + sqrt(delta)) / (2*a);
+        raiz2 = ((-(b)) - sqrt(delta)) / (2*a);
+        printf("\nO valor da primeira raiz é '%1.f' e o da segunda é '%1.f'.\n", raiz1, raiz2);
+    }
+    return 0;
+}
+
+int desafio28() {
+    
+
+    return 0;
+}
+
+
+int desafio30() {
+    int salario;
+    printf("\nDigite o valor do salário:\n");
+    scanf("%d", &salario);
+    if(salario <= 24000) {
+        printf("\nSalário de %d recebe isenção\n", salario);
+    } else if(salario > 24000 && salario <= 50000) {
+        printf("\nSalário de R$%d recebe uma alíquota de 15 porcento equivalente a %1.f\n", salario, salario * 0.15);
+    } else if(salario > 50000) {
+        printf("\nSalário de R$%d recebe uma alíquota de 27,5 porcento + R$3.900, equivalente a %1.f\n", salario, 3900 + (float)((salario * 0.27) + (salario * 0.005)));
+    }
+    return 0;
+}
+
+
 int main() {
-    desafio22();
+    desafio26();
+
 
     return 0;
 }
